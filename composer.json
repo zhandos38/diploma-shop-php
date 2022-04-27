@@ -1,0 +1,62 @@
+{
+    "name": "yiisoft/yii2-app-advanced",
+    "description": "Yii 2 Advanced Project Template",
+    "keywords": ["yii2", "framework", "advanced", "project template"],
+    "homepage": "http://www.yiiframework.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/yiisoft/yii2/issues?state=open",
+        "forum": "http://www.yiiframework.com/forum/",
+        "wiki": "http://www.yiiframework.com/wiki/",
+        "irc": "irc://irc.freenode.net/yii",
+        "source": "https://github.com/yiisoft/yii2"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap4": "~2.0.6",
+        "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
+        "dmstr/yii2-adminlte-asset": "2.*",
+        "insolita/yii2-adminlte-widgets": "~3.1",
+        "kartik-v/yii2-date-range": "dev-master",
+        "dkhlystov/yii2-uploadimage": "^0.3.0",
+        "yiisoft/yii2-imagine": "^2.2",
+        "himiklab/yii2-easy-thumbnail-image-helper": "*",
+        "boundstate/yii2-mailgun": "^1.0",
+        "vova07/yii2-imperavi-widget": "*",
+        "kartik-v/yii2-widget-fileinput": "@dev",
+        "yii2mod/yii2-sweet-alert": "*",
+        "codemix/yii2-localeurls": "^1.7",
+        "kartik-v/yii2-widget-select2": "dev-master",
+        "mirocow/yii2-eav": "*",
+        "mootensai/yii2-enhanced-gii": "*",
+        "ladamalina/lingua-stem-ru": "dev-master",
+        "2amigos/yii2-chartjs-widget" : "~2.0",
+        "coderius/yii2-lightbox2-widget" : "@dev",
+        "league/oauth2-google": "^4.0",
+        "yiisoft/yii2-authclient": "^2.2"
+    },
+    "require-dev": {
+        "yiisoft/yii2-debug": "~2.1.0",
+        "yiisoft/yii2-gii": "~2.1.0",
+        "yiisoft/yii2-faker": "~2.0.0",
+        "codeception/base": "^2.4.0",
+        "phpunit/phpunit": "~6.5.5",
+        "codeception/verify": "~1.0.0",
+        "symfony/browser-kit": ">=2.7 <=4.2.4"
+    },
+    "config": {
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
