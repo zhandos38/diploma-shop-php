@@ -14,8 +14,10 @@ class m201025_100201_create_delivery_method_payment_method_table extends Migrati
      */
     public function safeUp()
     {
-        $this->renameColumn($this->tableName, 'delivery_method', 'delivery_method_id');
-        $this->renameColumn($this->tableName, 'payment_method', 'payment_method_id');
+        $this->createTable($this->tableName, [
+            'delivery_method_id' => $this->integer(),
+            'payment_method_id' => $this->integer(),
+        ]);
 
         $this->addForeignKey('fk-delivery-method-delivery_method_id-delivery-method-id', $this->tableName, 'delivery_method_id', 'delivery_method', 'id', 'SET NULL');
         $this->addForeignKey('fk-payment-method-payment_method_id-payment-method-id', $this->tableName, 'payment_method_id', 'payment_method', 'id', 'SET NULL');
