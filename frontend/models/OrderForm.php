@@ -66,6 +66,7 @@ class OrderForm extends Model
         try {
             $order = new Order();
             $order->name = $this->name;
+            $order->number = 'init';
             $order->phone = $this->phone;
             $order->address = $this->address;
             $order->post_code = $this->post_code;
