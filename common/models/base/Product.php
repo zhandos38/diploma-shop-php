@@ -366,10 +366,10 @@ class Product extends \yii\db\ActiveRecord
                 $words[] = $item;
             }
         }
-        $relevance = "IF (`name` LIKE '%" . $words[0] . "%', 3, 0)";
+        $relevance = "IF (`name_ru` LIKE '%" . $words[0] . "%', 3, 0)";
         $relevance .= " + IF (`meta_keywords` LIKE '%" . $words[0] . "%', 2, 0)";
         for ($i = 1; $i < count($words); $i++) {
-            $relevance .= " + IF (`name` LIKE '%" . $words[$i] . "%', 3, 0)";
+            $relevance .= " + IF (`name_ru` LIKE '%" . $words[$i] . "%', 3, 0)";
             $relevance .= " + IF (`meta_keywords` LIKE '%" . $words[$i] . "%', 2, 0)";
         }
         $query = Product::find()
