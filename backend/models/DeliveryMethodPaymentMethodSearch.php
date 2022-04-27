@@ -17,7 +17,7 @@ class DeliveryMethodPaymentMethodSearch extends DeliveryMethodPaymentMethod
     public function rules()
     {
         return [
-            [['id', 'delivery_method_id', 'payment_method_id'], 'integer'],
+            [['delivery_method_id', 'payment_method_id'], 'integer'],
         ];
     }
 
@@ -57,7 +57,6 @@ class DeliveryMethodPaymentMethodSearch extends DeliveryMethodPaymentMethod
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'id' => $this->id,
             'delivery_method_id' => $this->delivery_method_id,
             'payment_method_id' => $this->payment_method_id,
         ]);
