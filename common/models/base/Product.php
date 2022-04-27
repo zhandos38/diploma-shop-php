@@ -377,10 +377,10 @@ class Product extends \yii\db\ActiveRecord
                 '*',
                 'relevance' => $relevance
             ])
-            ->where(['like', 'name', $words[0]])
+            ->where(['like', 'name_ru', $words[0]])
             ->orWhere(['like', 'meta_keywords', $words[0]]);
         for ($i = 1; $i < count($words); $i++) {
-            $query = $query->orWhere(['like', 'name', $words[$i]]);
+            $query = $query->orWhere(['like', 'name_ru', $words[$i]]);
             $query = $query->orWhere(['like', 'meta_keywords', $words[$i]]);
         }
         $query = $query->orderBy(['relevance' => SORT_DESC]);
