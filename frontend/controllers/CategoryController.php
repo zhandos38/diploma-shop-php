@@ -36,8 +36,8 @@ class CategoryController extends Controller
             'model' => $model,
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'minProductPrice' => $minProductPrice['price'],
-            'maxProductPrice' => $maxProductPrice['price']
+            'minProductPrice' => isset($minProductPrice) ? $minProductPrice['price'] : 0,
+            'maxProductPrice' => isset($maxProductPrice['price']) ? $maxProductPrice['price'] : 0
         ]);
     }
 
