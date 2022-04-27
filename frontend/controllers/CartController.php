@@ -105,29 +105,8 @@ class CartController extends Controller
 
         $model = new OrderForm();
 
-        if ($model->load(Yii::$app->request->post()) && $orderId = $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
             Yii::$app->session->setFlash('success', 'Спасибо! Ваш заказ успешно сформирован!');
-
-            if ($model->payment_method_id === '2') {
-                $salt = $this->getSalt(8);
-                $request = [
-                    'pg_merchant_id' => Yii::$app->params['payboxId'],
-                    'pg_amount' => $model->amount,
-                    'pg_salt' => $salt,
-                    'pg_order_id' => $orderId,
-                    'pg_description' => 'Оплата за заказа',
-                    'pg_success_url' => Url::base('https') . '/cart/success',
-                    'pg_result_url' => Yii::$app->params['apiDomain'] . '/result',
-                    'pg_result_url_method' => 'POST',
-                ];
-
-                $request = $this->getSignByData($request, 'payment.php', $salt);
-
-                $query = http_build_query($request);
-
-                return $this->redirect('https://api.paybox.money/payment.php?' . $query);
-            }
-
             return $this->redirect(['site/index']);
         }
 
